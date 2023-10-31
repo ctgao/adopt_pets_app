@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Adopt Me v1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="root">Not Rendered</div>
+    <!-- react is the shared library for development -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <!-- react-dom is specifically for interactions with the DOM and rendering it to the screen
+         other rendering libraries are ones such as react-native -->
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script>
+        // NOTE: JSX does this for you! As React devs, you write in JSX which makes writing components
+        // easier bc it's like HTML code. Then, the JSX gets compiled into JS that looks like this!
+        const App = () => { // always capitalize React components: it's required
+            // html tag type (div, h1, etc.), attributes for that tag, innerHTML between the open and close tag
+            // the html tag type can even be a non-existent tag and React will try to render it
+            return React.createElement("div", {},
+                React.createElement("h1", {}, "Adopt Me Please!"));
+        };
+
+        const container = document.getElementById("root");
+        const root = ReactDOM.createRoot(container);
+        // you can also create a React component simply by rendering the React component function itself
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
